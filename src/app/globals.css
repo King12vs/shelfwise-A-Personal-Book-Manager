@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-ink/10;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-image: radial-gradient(circle at 1px 1px, rgba(34, 39, 31, 0.05) 1px, transparent 0);
+    background-size: 22px 22px;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display text-ink;
+  }
+
+  /* Visible, deliberate focus ring instead of the browser default */
+  :focus-visible {
+    outline: 2px solid theme("colors.shelf.green");
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-card px-4 py-2.5 text-sm font-semibold transition-all duration-150 disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .btn-primary {
+    @apply btn bg-shelf-green text-paper shadow-sm hover:bg-shelf-green-dark active:scale-[0.98];
+  }
+
+  .btn-secondary {
+    @apply btn border border-ink/15 bg-paper text-ink hover:border-ink/30 hover:bg-parchment-light active:scale-[0.98];
+  }
+
+  .btn-danger {
+    @apply btn bg-transparent text-shelf-rust-dark hover:bg-shelf-rust/10 active:scale-[0.98];
+  }
+
+  .field-label {
+    @apply mb-1.5 block text-sm font-medium text-ink-soft;
+  }
+
+  .field-input {
+    @apply w-full rounded-card border border-ink/15 bg-paper px-3.5 py-2.5 text-sm text-ink placeholder:text-ink-faint focus:border-shelf-green;
+  }
+
+  .field-error {
+    @apply mt-1.5 text-xs font-medium text-shelf-rust-dark;
+  }
+
+  .card {
+    @apply rounded-card border border-ink/10 bg-paper shadow-card;
+  }
+}
