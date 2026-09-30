@@ -1,6 +1,6 @@
 # Shelfwise
 
-A personal book tracker. Sign up, keep a shelf of what you want to read, what
+A personal book manager. Sign up, keep a shelf of what you want to read, what
 you're reading, and what you've finished, tag things however you want, and
 see stats on your collection at a glance.
 
